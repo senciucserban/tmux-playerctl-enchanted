@@ -5,7 +5,7 @@ main() {
     if [ "$status" = 'Paused' ]; then
         status_icon='⏸'
     else
-        status_icon='▶'
+        status_icon='▶️'
     fi
 
     echo "$status_icon"
