@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 main() {
     status=$(playerctl loop)
     if [ "$status" = 'None' ]; then

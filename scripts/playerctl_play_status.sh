@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 main() {
     status=$(playerctl status)
     if [ "$status" = 'Paused' ]; then

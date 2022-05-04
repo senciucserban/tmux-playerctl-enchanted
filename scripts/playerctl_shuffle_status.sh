@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 main() {
     status=$(playerctl shuffle)
     if [ "$status" = 'On' ]; then
@@ -8,4 +10,5 @@ main() {
 
     echo "$status_icon"
 }
+
 main
