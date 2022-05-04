@@ -3,7 +3,7 @@
 main() {
     status=$(playerctl loop)
     if [ "$status" = 'None' ]; then
-        status_icon=''
+        status_icon='🟧'
     else
         if [ "$status" = 'Track' ]; then
             status_icon='🔂'
