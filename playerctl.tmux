@@ -13,7 +13,7 @@ playerctl_loop_status_interpolation="\#{playerctl_loop_status}"
 do_interpolation() {
   local string=$1
   local string=${string/$playerctl_short_interpolation/$playerctl_short}
-  local string=${string/playerctl_loop_status_interpolation/playerctl_loop_status}
+  local string=${string/$playerctl_loop_status_interpolation/$playerctl_loop_status}
   echo "$string"
 }
 
