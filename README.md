@@ -1,5 +1,7 @@
 # tmux-plugin-playerctl
 
+> Source of inspiration: [richin13/tmux-plugin-playerctl](https://github.com/richin13/tmux-plugin-playerctl)  
+
 A tmux plugin for using [playerctl](https://github.com/acrisci/playerctl) to:
 * Display [MPRIS](https://www.freedesktop.org/wiki/Specifications/mpris-spec/) meta-data about the music currently playing.
 * Display player status: playing/paused, shuffle and repeat;
@@ -44,16 +46,25 @@ run-shell ~/path/to/local/repo/playerctl.tmux
 
 The currently available options are:
 
-- `#{playerctl_artist}`: Display the song's artist information
-- `#{playerctl_title}`: Display the song's title information
-- `#{playerctl_album}`: Display the song's album information
-- `#{playerctl_full}`: Display the song info in the format [Artist] - [Title]
+- `#{playerctl_loop_status}`: Display the loop status None/Playlist/Track;
+- `#{playerctl_play_status}`: Display the play status Playing/Paused;
+- `#{playerctl_shuffle_status}`: Display the shuffle status On/Off;
+- `#{playerctl_short}`: Display the song's information first 30 chars of `[Artist] - [Title]`;
 
 Just add the desired option to your `.tmux.conf` like this:
 
 ```bash
-set -g status-right   "#{playerctl_full}"
+set -g status-right "#{playerctl_full}"
 ```
+
+### Shortcuts
+
+You can set few shortcuts to control the player:
+
+bind C-Space run-shell "playerctl play-pause"
+bind C-Tab run-shell "playerctl shuffle Toggle"
+- `bind C-Space run-shell "playerctl play-pause"` (CTRL + Space): Toggle play/pause;
+- `bind C-Tab run-shell "playerctl shuffle Toggle"` (CTRL + Tab): Toggle shuffle;
 
 ## License
 

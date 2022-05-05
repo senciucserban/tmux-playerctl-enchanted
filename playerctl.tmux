@@ -16,12 +16,17 @@ playerctl_play_status_interpolation="\#{playerctl_play_status}"
 playerctl_shuffle_status="#($CWD/scripts/playerctl_shuffle_status.sh)"
 playerctl_shuffle_status_interpolation="\#{playerctl_shuffle_status}"
 
+playerctl_loop_toggle="#($CWD/scripts/playerctl_loop_toggle.sh)"
+playerctl_loop_toggle_interpolation="\#{playerctl_loop_toggle}"
+
+
 do_interpolation() {
   local string=$1
   local string=${string/$playerctl_short_interpolation/$playerctl_short}
   local string=${string/$playerctl_loop_status_interpolation/$playerctl_loop_status}
   local string=${string/$playerctl_play_status_interpolation/$playerctl_play_status}
   local string=${string/$playerctl_shuffle_status_interpolation/$playerctl_shuffle_status}
+  local string=${string/$playerctl_loop_toggle_interpolation/$playerctl_loop_toggle}
   echo "$string"
 }
 
